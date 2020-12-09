@@ -1,18 +1,14 @@
 import React, { Component } from "react";
-import axios from "axios";
+import LoadingContainer from "./containers/LoadingContainer";
 class App extends Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    axios.get("/user").then((res) => {
-      console.log("user", res.data.name);
-    });
-  }
+  componentDidMount() {}
 
   render() {
-    return <p>React Express Boilerplate - Frontend</p>;
+    return <LoadingContainer />;
   }
 }
 

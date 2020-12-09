@@ -6,8 +6,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/user", (req, res) => {
-  res.json({ name: "Foo" });
+app.get("/users", (req, res) => {
+  res.json([{ name: "Foo" }, { name: "Bar" }, { name: "FooBar" }]);
 });
 
 app.listen(port, () => {
