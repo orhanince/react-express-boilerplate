@@ -1,12 +1,9 @@
 const express = require("express");
+const UserController = require("./../controllers/user-controller");
 const usersRouter = express.Router();
 
-usersRouter.route("/").get((req, res) => {
-  res.json([{ name: "Foo" }, { name: "Bar" }, { name: "FooBar" }]);
-});
+usersRouter.get("/", UserController.getUsers);
 
-usersRouter.route("/:id").get((req, res) => {
-  res.send(`current user id is ${req.params.id}`);
-});
+usersRouter.get("/:id", UserController.getUser);
 
 module.exports = usersRouter;
